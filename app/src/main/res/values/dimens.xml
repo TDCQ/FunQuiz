@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <dimen name="text_size">14sp</dimen>
+    <dimen name="home_title_margin_top">8dp</dimen>
+    <dimen name="home_title_margin_bottom">8dp</dimen>
+    <dimen name="home_title_text_size">28sp</dimen>
+    <dimen name="radio_button_padding_left">8dp</dimen>
+    <dimen name="edit_text_padding_left">24dp</dimen>
+    <dimen name="submit_button_text_size">28sp</dimen>
+    <dimen name="little_margin_top_bottom">4dp</dimen>
+    <dimen name="second_level_font_size">22sp</dimen>
+    <dimen name="third_level_font_size">16sp</dimen>
+</resources>

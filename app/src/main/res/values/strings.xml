@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Fun Quiz</string>
+    <string name="submit_exam_paper">做完了，交卷</string>
+    <string name="abagong">阿巴贡</string>
+    <string name="xili">希礼</string>
+    <string name="ganglangtai">葛朗台</string>
+    <string name="yanjiansheng">严监生</string>
+    <string name="sixth_quiz">6、下列是吝啬鬼的是？</string>
+    <string name="qinghaihu">青海湖</string>
+    <string name="taihu">太湖</string>
+    <string name="poyanghu">鄱阳湖</string>
+    <string name="dongtinghu">洞庭湖</string>
+    <string name="fifth_quiz">5、五湖四海中包括下面些湖？</string>
+    <string name="cengjingcanghai">曾经沧海难为水</string>
+    <string name="annengcuimei">安能摧眉折腰事权贵</string>
+    <string name="andeguangsha">安得广厦千万间</string>
+    <string name="wukenaihe">无可奈何花落去</string>
+    <string name="fourth_quiz">4、“使我不得开心颜”的上一句是？</string>
+    <string name="tang_job">唐代一种官职</string>
+    <string name="tang_seng">唐代一位高僧</string>
+    <string name="tang_poet">唐代一位诗人</string>
+    <string name="third_quiz">3、“司空见惯”中的“司空”是指？</string>
+    <string name="noble">贵族</string>
+    <string name="princes">诸侯王</string>
+    <string name="king">皇帝</string>
+    <string name="second_quiz">2、《史记》中的“世家”是给什么人作的传？</string>
+    <string name="chi">尺</string>
+    <string name="zhi">咫</string>
+    <string name="first_quiz">1、成语“咫尺天涯”中，“咫”，“尺”都是我国古代计量单位，那么哪个更长？</string>
+    <string name="error_reason_below">错误题目的解析如下：</string>
+    <string name="quiz_home_title">2018一站到底</string>
+    <string name="seventh_quiz">7、（脑筋急转弯）26个字母哪两个听的人最多？</string>
+    <string name="seventh_quiz_hint">请在此处填写答案</string>
+</resources>
