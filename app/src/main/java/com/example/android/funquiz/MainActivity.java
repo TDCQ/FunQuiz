@@ -144,7 +144,5 @@ public class MainActivity extends AppCompatActivity {
         } else {
             resultMessageTip.setVisibility(View.VISIBLE);
         }
-        LinearLayout judgeLayout = (LinearLayout) findViewById((R.id.judge));
-
     }
 }

@@ -9,9 +9,6 @@
     </style>
 
     <style name="customRadioButton" parent="@android:style/Widget.DeviceDefault.Light.CompoundButton.RadioButton">
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:paddingLeft="@dimen/radio_button_padding_left"-->
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:paddingLeft">@dimen/radio_button_padding_left</item>
