@@ -14,11 +14,11 @@
 
         <TextView
             style="@style/normal"
-            android:layout_marginTop="@dimen/home_title_margin_top"
             android:layout_marginBottom="@dimen/home_title_margin_bottom"
+            android:layout_marginTop="@dimen/home_title_margin_top"
             android:gravity="center_horizontal"
             android:text="@string/quiz_home_title"
-            android:textSize="@dimen/home_title_text_size"/>
+            android:textSize="@dimen/home_title_text_size" />
 
         <LinearLayout
             android:id="@+id/questions"
@@ -33,20 +33,21 @@
 
                 <RelativeLayout
                     style="@style/normal" >
+
                     <TextView
-                        android:id="@+id/question_1"
+                        android:id="@+id/tv_question_1"
                         style="@style/question_title"
-                        android:text="@string/first_quiz"/>
+                        android:text="@string/first_quiz" />
                     <RadioGroup
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/question_1"
+                        android:layout_below="@id/tv_question_1"
                         android:orientation="vertical">
                         <RadioButton
                             style="@style/customRadioButton"
                             android:text="@string/zhi" />
                         <RadioButton
-                            android:id="@+id/question_1_answer"
+                            android:id="@+id/rb_question_1_answer"
                             style="@style/customRadioButton"
                             android:text="@string/chi"/>
                     </RadioGroup>
@@ -63,19 +64,19 @@
                 <RelativeLayout
                     style="@style/normal">
                     <TextView
-                        android:id="@+id/question_2"
+                        android:id="@+id/tv_question_2"
                         style="@style/question_title"
                         android:text="@string/second_quiz"/>
                     <RadioGroup
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/question_2"
+                        android:layout_below="@id/tv_question_2"
                         android:orientation="vertical">
                         <RadioButton
                             style="@style/customRadioButton"
                             android:text="@string/king"/>
                         <RadioButton
-                            android:id="@+id/question_2_answer"
+                            android:id="@+id/rb_question_2_answer"
                             style="@style/customRadioButton"
                             android:text="@string/princes"/>
                         <RadioButton
@@ -94,13 +95,13 @@
                 <RelativeLayout
                     style="@style/normal" >
                     <TextView
-                        android:id="@+id/question_3"
+                        android:id="@+id/tv_question_3"
                         style="@style/question_title"
                         android:text="@string/third_quiz" />
                     <RadioGroup
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/question_3"
+                        android:layout_below="@id/tv_question_3"
                         android:orientation="vertical">
                         <RadioButton
                             style="@style/customRadioButton"
@@ -109,7 +110,7 @@
                             style="@style/customRadioButton"
                             android:text="@string/tang_seng"/>
                         <RadioButton
-                            android:id="@+id/question_3_answer"
+                            android:id="@+id/rb_question_3_answer"
                             style="@style/customRadioButton"
                             android:text="@string/tang_job"/>
                     </RadioGroup>
@@ -125,13 +126,13 @@
                 <RelativeLayout
                     style="@style/normal" >
                     <TextView
-                        android:id="@+id/question_4"
+                        android:id="@+id/tv_question_4"
                         style="@style/question_title"
                         android:text="@string/fourth_quiz"/>
                     <RadioGroup
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/question_4"
+                        android:layout_below="@id/tv_question_4"
                         android:orientation="vertical">
                         <RadioButton
                             style="@style/customRadioButton"
@@ -140,7 +141,7 @@
                             style="@style/customRadioButton"
                             android:text="@string/andeguangsha"/>
                         <RadioButton
-                            android:id="@+id/question_4_answer"
+                            android:id="@+id/rb_question_4_answer"
                             style="@style/customRadioButton"
                             android:text="@string/annengcuimei"/>
                         <RadioButton
@@ -160,28 +161,28 @@
                     style="@style/normal" >
 
                     <TextView
-                        android:id="@+id/question_5"
+                        android:id="@+id/tv_question_5"
                         style="@style/question_title"
                         android:text="@string/fifth_quiz" />
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/question_5"
+                        android:layout_below="@id/tv_question_5"
                         android:orientation="vertical">
                         <CheckBox
-                            android:id="@+id/question_5_answer_1"
+                            android:id="@+id/cb_question_5_answer_1"
                             style="@style/customCheckBox"
                             android:text="@string/dongtinghu"/>
                         <CheckBox
-                            android:id="@+id/question_5_answer_2"
+                            android:id="@+id/cb_question_5_answer_2"
                             style="@style/customCheckBox"
                             android:text="@string/poyanghu"/>
                         <CheckBox
-                            android:id="@+id/question_5_answer_3"
+                            android:id="@+id/cb_question_5_answer_3"
                             style="@style/customCheckBox"
                             android:text="@string/taihu"/>
                         <CheckBox
-                            android:id="@+id/question_5_answer_4"
+                            android:id="@+id/cb_question_5_answer_4"
                             style="@style/customCheckBox"
                             android:text="@string/qinghaihu"/>
                     </LinearLayout>
@@ -197,28 +198,28 @@
                 <RelativeLayout
                     style="@style/normal" >
                     <TextView
-                        android:id="@+id/question_6"
+                        android:id="@+id/tv_question_6"
                         style="@style/question_title"
                         android:text="@string/sixth_quiz"/>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/question_6"
+                        android:layout_below="@id/tv_question_6"
                         android:orientation="vertical">
                         <CheckBox
-                            android:id="@+id/question_6_answer_1"
+                            android:id="@+id/cb_question_6_answer_1"
                             style="@style/customCheckBox"
                             android:text="@string/yanjiansheng"/>
                         <CheckBox
-                            android:id="@+id/question_6_answer_2"
+                            android:id="@+id/cb_question_6_answer_2"
                             style="@style/customCheckBox"
                             android:text="@string/ganglangtai"/>
                         <CheckBox
-                            android:id="@+id/question_6_answer_3"
+                            android:id="@+id/cb_question_6_answer_3"
                             style="@style/customCheckBox"
                             android:text="@string/xili"/>
                         <CheckBox
-                            android:id="@+id/question_6_answer_4"
+                            android:id="@+id/cb_question_6_answer_4"
                             style="@style/customCheckBox"
                             android:text="@string/abagong"/>
                     </LinearLayout>
@@ -234,21 +235,22 @@
                 <RelativeLayout
                     style="@style/normal">
                     <TextView
-                        android:id="@+id/question_7"
+                        android:id="@+id/tv_question_7"
                         style="@style/question_title"
                         android:text="@string/seventh_quiz"/>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/question_7"
+                        android:layout_below="@id/tv_question_7"
                         android:orientation="vertical">
 
                         <EditText
-                            android:id="@+id/question_7_answer"
+                            android:id="@+id/et_question_7_answer"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:paddingLeft="@dimen/edit_text_padding_left"
-                            android:hint="@string/seventh_quiz_hint"/>
+                            android:paddingStart="@dimen/edit_text_padding_left"
+                            android:hint="@string/seventh_quiz_hint"
+                            tools:ignore="RtlSymmetry" />
                     </LinearLayout>
                 </RelativeLayout>
 
@@ -261,35 +263,6 @@
             android:text="@string/submit_exam_paper"
             android:textSize="@dimen/submit_button_text_size"
             android:onClick="calculateScore" />
-
-        <LinearLayout
-            android:id="@+id/judge"
-            style="@style/normal"
-            android:orientation="vertical"  >
-
-            <TextView
-                android:id="@+id/score"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/little_margin_top_bottom"
-                android:textSize="@dimen/second_level_font_size"
-                android:fontFamily="sans-serif-condensed"
-                android:textColor="@android:color/background_dark"/>
-
-            <TextView
-                android:id="@+id/resultMessageTip"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/little_margin_top_bottom"
-                android:text="@string/error_reason_below"
-                android:textSize="@dimen/second_level_font_size"
-                android:visibility="invisible"/>
-
-            <TextView
-                android:id="@+id/resultMessage"
-                style="@style/normal"
-                android:textSize="@dimen/third_level_font_size"/>
-        </LinearLayout>
 
     </LinearLayout>
 

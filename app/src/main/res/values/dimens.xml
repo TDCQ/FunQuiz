@@ -10,4 +10,14 @@
     <dimen name="little_margin_top_bottom">4dp</dimen>
     <dimen name="second_level_font_size">22sp</dimen>
     <dimen name="third_level_font_size">16sp</dimen>
+    <dimen name="transcripts_logo_width">56dp</dimen>
+    <dimen name="transcripts_logo_height">56dp</dimen>
+    <dimen name="transcripts_logo_padding">8dp</dimen>
+    <dimen name="custom_transcript_padding">8dp</dimen>
+    <dimen name="custom_transcript_toast_margin">16dp</dimen>
+    <dimen name="normal_layout_maring_start">16dp</dimen>
+    <dimen name="normal_layout_margin_end">16dp</dimen>
+    <dimen name="question_cards_layout_margin">8dp</dimen>
+    <dimen name="question_cards_padding">8dp</dimen>
+    <dimen name="question_title_text_size">16sp</dimen>
 </resources>

@@ -2,15 +2,17 @@ package com.example.android.funquiz;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Editable;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import org.w3c.dom.Text;
+import static android.media.CamcorderProfile.get;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,129 +22,156 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-
+    /**
+     * 计算分数
+     * @param view 传入触发事件的视图
+     */
     public void calculateScore(View view) {
         int score = 0;
         String errorMessage = "";
 
         // 问题1：答对得10分
-        RadioButton singleSelectButton = (RadioButton) findViewById(R.id.question_1_answer);
+        RadioButton singleSelectButton = (RadioButton) findViewById(R.id.rb_question_1_answer);
         Boolean isChecked = singleSelectButton.isChecked();
-        if(isChecked){
+        if (isChecked) {
             score += 10;
-        }else {
-            errorMessage += "1、 咫：周制八寸,合今制市尺六寸二分二厘，尺：一尺等于10寸，所以尺比咫大。\n";
+        } else {
+            errorMessage += getString(R.string.first_quiz_error_explain);
         }
 
         // 问题2：答对得10分
-        singleSelectButton = (RadioButton) findViewById(R.id.question_2_answer);
+        singleSelectButton = (RadioButton) findViewById(R.id.rb_question_2_answer);
         isChecked = singleSelectButton.isChecked();
-        if(isChecked){
+        if (isChecked) {
             score += 10;
         } else {
-            errorMessage += "\n2、 司马迁写作《史记》以“本纪”叙帝王，以“世家”载诸侯，以“列传”记人物，以“书”述典章制度，以“表”排列大事。\n";
+            errorMessage += getString(R.string.second_quiz_error_explain);
         }
 
         // 问题3：答对得10分
-        singleSelectButton = (RadioButton) findViewById(R.id.question_3_answer);
+        singleSelectButton = (RadioButton) findViewById(R.id.rb_question_3_answer);
         isChecked = singleSelectButton.isChecked();
-        if(isChecked){
+        if (isChecked) {
             score += 10;
         } else {
-            errorMessage += "\n3、 这个成语来自刘禹锡的诗《赠李司空妓》，“司空见惯浑闲事，断尽江南刺史肠。”司空指当时的诗人李绅，职位为司空，相当于明清两代的尚书。\n";
+            errorMessage += getString(R.string.third_quiz_error_explain);
         }
 
         // 问题4：答对得10分
-        singleSelectButton = (RadioButton) findViewById(R.id.question_4_answer);
+        singleSelectButton = (RadioButton) findViewById(R.id.rb_question_4_answer);
         isChecked = singleSelectButton.isChecked();
-        if(isChecked){
+        if (isChecked) {
             score += 10;
         } else {
-            errorMessage += "\n4、 李白《梦游天姥吟留别》中有“安能摧眉折腰事权贵，使我不得开心颜”。\n";
+            errorMessage += getString(R.string.fourth_quiz_error_explain);
         }
 
-        // 问题5：答对一个选项得5分，答错不得分
-        CheckBox checkBox = (CheckBox) findViewById(R.id.question_5_answer_1);
+        // 问题5：多选题（本题20分），本题共有三个选项是正确选项，答对一个选项得5分，所有选项都答对额外加至满分20分;选择了错误选项不得分;不答不給分也不扣分。
+        CheckBox checkBox = (CheckBox) findViewById(R.id.cb_question_5_answer_1);
         Boolean isChecked_5_1 = checkBox.isChecked();
-        checkBox = (CheckBox) findViewById(R.id.question_5_answer_2);
+        checkBox = (CheckBox) findViewById(R.id.cb_question_5_answer_2);
         Boolean isChecked_5_2 = checkBox.isChecked();
-        checkBox = (CheckBox) findViewById(R.id.question_5_answer_3);
+        checkBox = (CheckBox) findViewById(R.id.cb_question_5_answer_3);
         Boolean isChecked_5_3 = checkBox.isChecked();
-        checkBox = (CheckBox) findViewById(R.id.question_5_answer_4);
+        checkBox = (CheckBox) findViewById(R.id.cb_question_5_answer_4);
         Boolean isChecked_5_4 = checkBox.isChecked();
-        if(!isChecked_5_4){
-            if(isChecked_5_1){
+        // isChecked_5_4 是唯一的错误选项，如果选择了此项，就以0分记
+        if (!isChecked_5_4) {
+            if (isChecked_5_1) {
                 score += 5;
             }
-            if(isChecked_5_2){
+            if (isChecked_5_2) {
                 score += 5;
             }
-            if(isChecked_5_3){
+            if (isChecked_5_3) {
                 score += 5;
             }
-            if(isChecked_5_1 && isChecked_5_2 && isChecked_5_3){
+            if (isChecked_5_1 && isChecked_5_2 && isChecked_5_3) {
                 score += 5;
             } else {
-                errorMessage += "\n5、 五湖指洞庭湖、鄱阳湖、太湖、巢湖、洪泽湖。\n";
+                errorMessage += getString(R.string.fifth_quiz_error_explain);
             }
         } else {
-            errorMessage += "\n5、 五湖指洞庭湖、鄱阳湖、太湖、巢湖、洪泽湖。\n";
+            errorMessage += R.string.fifth_quiz_error_explain;
         }
 
-        // 问题6: 答对一个选项得5分，答错不得分
-        checkBox = (CheckBox) findViewById(R.id.question_6_answer_1);
+        // 问题6: 多选题（本题20分），本题共由三个选项是正确选项，答对一个选项得5分，所有选项都答对额外加至满分20分;选择了错误选项不得分; 不答不給分也不扣分。
+        checkBox = (CheckBox) findViewById(R.id.cb_question_6_answer_1);
         Boolean isCheckedOfQuizSixOptionsOne = checkBox.isChecked();
-        checkBox = (CheckBox) findViewById(R.id.question_6_answer_2);
+        checkBox = (CheckBox) findViewById(R.id.cb_question_6_answer_2);
         Boolean isCheckedOfQuizSixOptionsTwo = checkBox.isChecked();
-        checkBox = (CheckBox) findViewById(R.id.question_6_answer_3);
+        checkBox = (CheckBox) findViewById(R.id.cb_question_6_answer_3);
         Boolean isCheckedOfQuizSixOptionsThree = checkBox.isChecked();
-        checkBox = (CheckBox) findViewById(R.id.question_6_answer_4);
+        checkBox = (CheckBox) findViewById(R.id.cb_question_6_answer_4);
         Boolean isCheckedOfQuizSixOptionsFour = checkBox.isChecked();
-        if(!isCheckedOfQuizSixOptionsThree) {
+        // isCheckedOfQuizSixOptionsThree 是唯一的错误选项，如果选择了此项，就以0分记
+        if (!isCheckedOfQuizSixOptionsThree) {
             if (isCheckedOfQuizSixOptionsOne && isCheckedOfQuizSixOptionsTwo && isCheckedOfQuizSixOptionsFour) {
                 score += 20;
             } else {
-                errorMessage += "\n6、";
+                errorMessage += getString(R.string.sixth_quiz_error_exlain_sn);
                 if (isCheckedOfQuizSixOptionsOne) {
                     score += 5;
                 } else {
-                    errorMessage += "清代作家吴敬梓笔下的《儒林外史》严监生\n";
+                    errorMessage += getString(R.string.sixth_quiz_error_explain_part_1);
                 }
                 if (isCheckedOfQuizSixOptionsTwo) {
                     score += 5;
                 } else {
-                    errorMessage += "法国作家巴尔扎克笔下的《欧也妮·葛朗台》葛朗台\n";
+                    errorMessage += getString(R.string.sixth_quiz_error_explain_part_2);
                 }
                 if (isCheckedOfQuizSixOptionsFour) {
                     score += 5;
                 } else {
-                    errorMessage += "法国作家莫里哀笔下的《吝啬鬼》阿巴贡\n";
+                    errorMessage += getString(R.string.sixth_quiz_error_explain_part_3);
                 }
             }
         } else {
-            errorMessage += "\n6、 清代作家吴敬梓笔下的《儒林外史》严监生\n法国作家巴尔扎克笔下的《欧也妮·葛朗台》葛朗台\n法国作家莫里哀笔下的《吝啬鬼》阿巴贡\n";
+            errorMessage += getString(R.string.sixth_quiz_error_explain_full);
         }
 
-        //  问题7
-        EditText editText = (EditText) findViewById(R.id.question_7_answer);
+        //  问题7: 问答题（本题20分）， 过滤用户的输入，把替换可能的空格, 逗号，冒号分隔符后，忽略大小写，忽略两个字母的顺序比较是否等于"cd";
+        EditText editText = (EditText) findViewById(R.id.et_question_7_answer);
         String inputAnswer = editText.getText().toString().toLowerCase();
-        inputAnswer = inputAnswer.replace(" ", "").replace(",", "").replace(":", "").replace("，","");
-        if(inputAnswer.equals("cd") || inputAnswer.equals("dc")){
+        inputAnswer = inputAnswer.replace(" ", "").replace(",", "").replace(":", "").replace("，", "");
+        if (inputAnswer.equals("cd") || inputAnswer.equals("dc")) {
             score += 20;
         } else {
-            errorMessage += "\n7、 “CD”最多人听！\n";
+            errorMessage += getString(R.string.seventh_quiz_error_explain);
         }
 
-        // 打印输出总分与错误原因
-        TextView scoreView = (TextView) findViewById(R.id.score);
-        scoreView.setText("总分是：" + score );
-        TextView resultMessageView = (TextView) findViewById(R.id.resultMessage);
-        resultMessageView.setText(errorMessage);
-        TextView resultMessageTip = (TextView) findViewById(R.id.resultMessageTip);
-        if(errorMessage.length() == 0) {
+        // 调用自定义toast, 显示成绩单详细信息
+        toast(score, errorMessage);
+    }
+
+    private void toast(int score, String errorMessage){
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.custom_toast,
+                (ViewGroup) findViewById(R.id.custom_toast_container));
+
+        // 设置输出总分
+        TextView scoreView =  layout.findViewById(R.id.score);
+        scoreView.setText(layout.getResources().getQuantityString(R.plurals.total_score_prefix, score, score));
+
+        // 设置输出错误信息
+        TextView resultMessageTip = layout.findViewById(R.id.resultMessageTip);
+        if (errorMessage.length() == 0) {
             resultMessageTip.setVisibility(View.INVISIBLE);
         } else {
             resultMessageTip.setVisibility(View.VISIBLE);
         }
+
+        // 更新评审结果
+        TextView resultMessageView = layout.findViewById(R.id.resultMessage);
+        resultMessageView.setText(errorMessage);
+
+        // 设置自定义toast
+        Toast toast = new Toast(getApplicationContext());
+        toast.setMargin(0.7f, 0.7f);
+        toast.setGravity(Gravity.FILL | Gravity.CENTER, 0, 0);
+        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setView(layout);
+        toast.show();
+
     }
 }
