@@ -3,11 +3,12 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">#2196F3</item>
-        <item name="colorPrimaryDark">#1976D2</item>
-        <item name="colorAccent">#FF4081</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!--<style name="customRadioButton" parent="@android:style/Widget.DeviceDefault.Light.CompoundButton.RadioButton">-->
     <style name="customRadioButton" parent="@android:style/Widget.DeviceDefault.Light.CompoundButton.RadioButton">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -27,7 +28,7 @@
         <item name="android:layout_marginEnd">@dimen/normal_layout_margin_end</item>
     </style>
 
-    <style name="question_cards">
+    <style name="questionCards">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">@dimen/question_cards_layout_margin</item>
@@ -37,11 +38,11 @@
         <item name="android:background">@drawable/rectangle_border_shape</item>
     </style>
 
-    <style name="question_title">
+    <style name="questionTitle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/question_title_text_size</item>
         <item name="android:fontFamily">sans-serif-condensed</item>
-        <item name="android:textColor">#757575</item>
+        <item name="android:textColor">@color/questionTitle</item>
     </style>
 </resources>
